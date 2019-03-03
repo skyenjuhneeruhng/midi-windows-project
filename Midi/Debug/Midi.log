@@ -1,0 +1,7 @@
+﻿  stdafx.cpp
+  MidiDevice.cpp
+  Midi.cpp
+  Generating Code...
+     Creating library G:\CWorks\MidiDLL\Midi\Debug\Midi.lib and object G:\CWorks\MidiDLL\Midi\Debug\Midi.exp
+  Midi.vcxproj -> G:\CWorks\MidiDLL\Midi\Debug\Midi.dll
+  Midi.vcxproj -> G:\CWorks\MidiDLL\Midi\Debug\Midi.pdb (Full PDB)
