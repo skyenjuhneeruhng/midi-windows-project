@@ -1,9 +1,1 @@
-﻿  stdafx.cpp
-  Midi.cpp
-  MidiDevice.cpp
-     Creating library G:\CWorks\MidiDLL\Midi\Release\Midi.lib and object G:\CWorks\MidiDLL\Midi\Release\Midi.exp
-  Generating code
-  All 20 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  Midi.vcxproj -> G:\CWorks\MidiDLL\Midi\Release\Midi.dll
-  Midi.vcxproj -> G:\CWorks\MidiDLL\Midi\Release\Midi.pdb (Full PDB)
+﻿

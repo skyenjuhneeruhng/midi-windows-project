@@ -8,7 +8,7 @@
 #ifndef __MIDI_DEVICE_H__
 #define __MIDI_DEVICE_H__
 
-#include <windows.h>
+#include <Windows.h>
 #include <mmsystem.h>
 
 #define MIDI_BUFFERSIZE 32768

@@ -1,10 +1,9 @@
-// PuppetMaster Input Library (MIDI)
-// Copyright 2001 by Jon Parise <jparise@cmu.edu>
+//Author: sky
 
 #ifndef __MIDI_H__
 #define __MIDI_H__
 
-#include <windows.h>
+#include <Windows.h>
 
 #include "MidiDevice.h"
 

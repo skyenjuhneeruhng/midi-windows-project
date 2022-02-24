@@ -1,0 +1,14 @@
+﻿  stdafx.cpp
+  Midi.cpp
+  MidiDevice.cpp
+G:\CWorks\MidiDLL\Midi\Midi\MidiDevice.cpp(35,64): warning C4311: 'type cast': pointer truncation from 'void (__cdecl *)(HMIDIIN,UINT,DWORD,DWORD,DWORD)' to 'DWORD'
+G:\CWorks\MidiDLL\Midi\Midi\MidiDevice.cpp(35,64): warning C4302: 'type cast': truncation from 'void (__cdecl *)(HMIDIIN,UINT,DWORD,DWORD,DWORD)' to 'DWORD'
+G:\CWorks\MidiDLL\Midi\Midi\MidiDevice.cpp(35,79): warning C4311: 'type cast': pointer truncation from 'MidiDevice *' to 'DWORD'
+G:\CWorks\MidiDLL\Midi\Midi\MidiDevice.cpp(35,79): warning C4302: 'type cast': truncation from 'MidiDevice *' to 'DWORD'
+G:\CWorks\MidiDLL\Midi\Midi\MidiDevice.cpp(75,28): warning C4312: 'type cast': conversion from 'DWORD' to 'MidiDevice *' of greater size
+     Creating library G:\CWorks\MidiDLL\Midi\x64\Release\Midi.lib and object G:\CWorks\MidiDLL\Midi\x64\Release\Midi.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 20 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Midi.vcxproj -> G:\CWorks\MidiDLL\Midi\x64\Release\Midi.dll
