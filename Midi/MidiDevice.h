@@ -24,7 +24,7 @@ private:
 
 	void addData(unsigned long data);
 
-	static void CALLBACK midiCallback(HMIDIIN device, UINT status, DWORD instancePtr, DWORD data, DWORD timestamp);
+	static void CALLBACK midiCallback(HMIDIIN device, UINT status, DWORD_PTR instancePtr, DWORD_PTR data, DWORD timestamp);
 
 public:
 	MidiDevice();

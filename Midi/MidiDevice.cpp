@@ -31,8 +31,8 @@ MidiDevice::open(unsigned int device_id)
 		//printf("ERROR0\n");
 		return;
 	}
-
-	result = midiInOpen(&device, device_id, (DWORD)&(midiCallback), (DWORD)(this), CALLBACK_FUNCTION);
+	
+	result = midiInOpen(&device, device_id, (DWORD_PTR)&(midiCallback), (DWORD_PTR)(this), CALLBACK_FUNCTION);
 	if (result != MMSYSERR_NOERROR) {
 		//printf("ERROR1\n");
 		return;
@@ -69,7 +69,7 @@ MidiDevice::close()
 }
 
 void CALLBACK
-MidiDevice::midiCallback(HMIDIIN device, UINT status, DWORD instancePtr, DWORD data, DWORD timestamp)
+MidiDevice::midiCallback(HMIDIIN device, UINT status, DWORD_PTR instancePtr, DWORD_PTR data, DWORD timestamp)
 {
 	if (status == MIM_DATA) {
 		((MidiDevice*)instancePtr)->addData(data);
