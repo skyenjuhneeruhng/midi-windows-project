@@ -6,6 +6,7 @@
 #include <Windows.h>
 
 #include "MidiDevice.h"
+#include "MidiDeviceOut.h"
 
 #define MIDI_POLL_INTERVAL  10      // milliseconds
 #define MAX_MIDI_EVENTS     8192
@@ -40,7 +41,7 @@ private:
 	void decode(unsigned short *buf, int size);
 
 public:
-	Midi(unsigned int device_id);
+	Midi(unsigned int device_id, bool isSender);
 
 	unsigned int poll(MidiEvent buf[MAX_MIDI_EVENTS]);
 
@@ -48,6 +49,10 @@ public:
 	DWORD threadProc();
 	void threadBegin();
 	void threadEnd();
+	
+	//these methods for sender only:
+	bool sendData(unsigned long data);
+	void close();
 
 	// Device information
 	static void deviceName(unsigned int num, char *name);

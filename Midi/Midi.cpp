@@ -6,6 +6,7 @@
 
 // Global MIDI device handle
 MidiDevice *midi = NULL;
+MidiDeviceOut* midiOut[10] = { NULL };
 
 BOOL APIENTRY
 DllMain(HINSTANCE instance, DWORD reason, LPVOID reserved)
@@ -13,26 +14,36 @@ DllMain(HINSTANCE instance, DWORD reason, LPVOID reserved)
 	switch (reason) {
 	case DLL_PROCESS_ATTACH:
 		midi = new MidiDevice();
+		for (int i = 0; i < 10; i++)
+			midiOut[i] = new MidiDeviceOut();
 		break;
 	case DLL_PROCESS_DETACH:
 		if (midi) {
 			midi->close();
 		}
+		for (int i = 0; i < 10; i++)
+			if(midiOut[i])
+				midiOut[i]->close();
 		break;
 	}
 
 	return TRUE;
 }
 
-Midi::Midi(unsigned int device_id)
+Midi::Midi(unsigned int device_id, bool isSender)
 {
-	threadID = 0;
-	threadHandle = NULL;
-	isRunning = false;
+	if (isSender) {
+		if(device_id < 10)
+			midiOut[device_id]->open(device_id);
+	}
+	else {
+		threadID = 0;
+		threadHandle = NULL;
+		isRunning = false;
 
-	events_read_pos = 0;
-	events_write_pos = 0;
-
+		events_read_pos = 0;
+		events_write_pos = 0;
+	}
 	this->device_id = device_id;
 }
 
@@ -137,6 +148,19 @@ Midi::threadEnd()
 		CloseHandle(threadHandle);
 		threadHandle = NULL;
 	}
+}
+
+bool Midi::sendData(unsigned long data)
+{
+	if (device_id < 10 && midiOut[device_id])
+		return midiOut[device_id]->sendData(data);
+	return false;
+}
+
+void Midi::close()
+{
+	if (device_id < 10 && midiOut[device_id])
+		midiOut[device_id]->close();
 }
 
 static DWORD WINAPI
